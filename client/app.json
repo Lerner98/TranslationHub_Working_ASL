@@ -1,0 +1,98 @@
+{
+  "expo": {
+    "name": "TranslationHubNative",
+    "slug": "TranslationHubNative",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to capture images for ASL and text translation.",
+        "NSMicrophoneUsageDescription": "This app uses the microphone to record audio for voice translation.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images for translation."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.anonymous.TranslationHubNative"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "scheme": "translationhub",
+    "newArchEnabled": true,
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://translationhub.example.com",
+          "asyncRoutes": {
+            "web": true,
+            "default": "development"
+          }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow TranslationHub to access your camera for ASL and text translation."
+        }
+      ],
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "Allow TranslationHub to access your camera for real-time ASL translation.",
+          "enableCodeScanner": false
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow TranslationHub to access your microphone for voice translation."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow TranslationHub to access your photos for image-based translation."
+        }
+      ],
+      "expo-document-picker",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          },
+          "android": {
+            "enableProguardInReleaseBuilds": true
+          }
+        }
+      ],
+      "expo-localization"
+    ]
+  }
+}

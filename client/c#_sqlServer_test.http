@@ -1,0 +1,23 @@
+### ✅ Login user (POST)
+POST http://localhost:5256/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "example8@email.com",
+  "password": "examplePassword123"
+} 
+### this wont work because the password was hashed
+### result will be 500 internal server error because of this
+
+### ✅ Register user (POST)
+POST http://localhost:5256/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "example8@email.com",
+  "password": "examplePassword123"
+}
+
+### ✅ Check session (GET)
+GET http://localhost:5256/api/session/validate
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
